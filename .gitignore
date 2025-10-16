@@ -1,0 +1,21 @@
+# Mailer Configuration (contains sensitive credentials)
+mailer/form_setting.php
+
+# IDE and Editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+~*
