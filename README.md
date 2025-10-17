@@ -10,8 +10,6 @@
 ## 🌟 Overview
 
 Personal portfolio website for **Aliul Hassan Olee**, an Aerospace Engineer and PhD aspirant specializing in:
-- Computational Fluid Dynamics (CFD)
-- Aerodynamics & Aircraft Design
 - Wireless Communications & Signal Processing
 - Automatic Modulation Classification (AMC)
 - OTFS/OFDM Systems for UAV/Satellite Links
@@ -133,15 +131,7 @@ All content is in `index.html`:
 - Lines 524-714: Research section
 - Lines 716-802: Publications section
 - Lines 804-863: References section
-
-## 📊 Performance
-
-- **Load Time:** < 2 seconds
-- **Page Size:** ~3.5 MB (including Base64 images)
-- **Mobile Responsive:** ✅
-- **SEO Score:** 95/100
-- **Accessibility:** WCAG 2.1 AA compliant
-
+  
 ---
 
 ## 🔐 Security Features
@@ -179,9 +169,9 @@ This project is licensed under the **MIT License**.
 *Aerospace Engineer | PhD Aspirant*
 
 - 🌐 Website: [aliulhassanolee.engineer](https://aliulhassanolee.engineer)
-- 💼 LinkedIn: [Your LinkedIn]
+- 💼 LinkedIn: [www.linkedin.com/in/aliulhassan]
 - 🐙 GitHub: [@aliul-olee](https://github.com/aliul-olee)
-- 📧 Email: [your-email]
+- 📧 Email: [aliul.hassan.olee.aaub@gmail.com]
 
 ---
 
