@@ -1017,16 +1017,11 @@ input[type="file"] {
 	float: left;
 	margin-right: 8px;
 	padding: 1px 8px;
-	background: #78cc6d;
 	font-size: 14px;
 	line-height: 20px;
 	color: #fefefe;
 	font-weight: 400;
 	text-transform: none;
-	border-radius: 2px;
-	-moz-border-radius: 2px;
-	-webkit-border-radius: 2px;
-	-khtml-border-radius: 2px;
 }
 
 .info-list ul li strong:after {

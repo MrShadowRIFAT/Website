@@ -171,11 +171,7 @@ $(function () {
 			}, 800);
 		}
 
-		if (this.hash == '#about-card') {
-			history.replaceState(null, null, ' ');
-			return false;
-		}
-		return true;
+		return false;
 	});
 	if((width >= 1200)) {
 	if (window.location.hash) {
