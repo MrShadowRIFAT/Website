@@ -1,0 +1,21 @@
+{
+  "name": "Aliul Hassan Olee - Portfolio",
+  "short_name": "AH Olee",
+  "description": "Avionics Engineer | PhD Aspirant in Wireless Communications",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ff9800",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/favicons/apple-touch-icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "research", "portfolio"],
+  "lang": "en-US",
+  "dir": "ltr"
+}

@@ -9,6 +9,11 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Aliul Hassan Olee | Avionics Engineer | PhD Aspirant in Wireless Communications</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	
+	<!-- DNS Prefetch for performance -->
+	<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+	<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+	<link rel="dns-prefetch" href="https://use.fontawesome.com">
 	<meta name="description" content="Aliul Hassan Olee — B.Sc. graduating in Avionics Engineering. PhD-Aspirant with publications in IEEE focusing in satellite, AI, communication & wireless systems." />
 	<meta name="keywords" content="Aliul Hassan Olee, avionics engineer, wireless communications, signal processing, automatic modulation classification, AMC, OTFS, OFDM, UAV communications, PhD aspirant, Bangladesh" />
 	<meta name="author" content="MrShadowRIFAT" />
@@ -31,19 +36,36 @@
 	
 	<!-- Robots Meta -->
 	<meta name="robots" content="index, follow" />
+	
+	<!-- Theme Color for mobile browsers -->
+	<meta name="theme-color" content="#ff9800" />
+	<meta name="msapplication-TileColor" content="#ff9800" />
+	
+	<!-- PWA Manifest -->
+	<link rel="manifest" href="/manifest.json" />
+
+	<!-- DNS Prefetch for performance -->
+	<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+	<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+	<link rel="dns-prefetch" href="https://use.fontawesome.com">
 
 	<!--
-		Load Fonts
+		Load Fonts - Optimized: Only load weights actually used (400, 500, 600)
 	-->
-	<link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
 	<!--
-		Load CSS
+		Load CSS - Critical styles loaded first
 	-->
+	<link rel="preload" href="css/basic.css" as="style" />
+	<link rel="preload" href="css/layout.css" as="style" />
 	<link rel="stylesheet" href="css/basic.css" />
 	<link rel="stylesheet" href="css/layout.css" />
 	<link rel="stylesheet" href="css/ionicons.css" />
-	<link rel="stylesheet" href="css/animate.css" />
+	<link rel="stylesheet" href="css/animate.css" media="print" onload="this.media='all'" />
+	<noscript><link rel="stylesheet" href="css/animate.css" /></noscript>
 
 	<!--
 		Background Gradient
@@ -51,12 +73,14 @@
 	<link rel="stylesheet" href="css/gradient.css" />
 
 	<!--
-		Skins & Colors
+		Skins & Colors - Preload critical theme files
 	-->
+	<link rel="preload" href="css/colors.css" as="style" />
 	<link rel="stylesheet" href="css/skin-modern.css" />
 	<link rel="stylesheet" href="css/skin-classic.css" />
 	<link rel="stylesheet" href="css/colors.css" />
-	<link rel="stylesheet" href="css/dark-mode.css" />
+	<link rel="stylesheet" href="css/dark-mode.css" media="print" onload="this.media='all'" />
+	<noscript><link rel="stylesheet" href="css/dark-mode.css" /></noscript>
 
 
 	<!--[if lt IE 9]>
@@ -966,18 +990,18 @@
 	</div>
 
 	<!--
-		jQuery Scripts
+		jQuery Scripts - Defer non-critical scripts for faster page load
 	-->
 	<script src="js/jquery.min.js"></script>
-	<script src="js/jquery.validate.js"></script>
-	<script src="js/jquery.slimscroll.js"></script>
-	<script src="js/typed.js"></script>
-	<script src="https://use.fontawesome.com/8da76d029b.js"></script>
+	<script src="js/jquery.validate.js" defer></script>
+	<script src="js/jquery.slimscroll.js" defer></script>
+	<script src="js/typed.js" defer></script>
+	<script src="https://use.fontawesome.com/8da76d029b.js" defer></script>
 
 	<!--
 		Main Scripts
 	-->
-	<script src="js/scripts.js"></script>
+	<script src="js/scripts.js" defer></script>
 
 	<!--
 		Anti-Copy Protection
@@ -1037,11 +1061,6 @@
 			return false;
 		});
 	</script>
-
-	<!--
-		Google map api
-	-->
-	<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
 
 	<!-- Footer -->
 	<footer class="glass-footer">
