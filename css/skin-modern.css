@@ -362,9 +362,7 @@ strong {
 }
 
 .border-line-h:after {
-	background: -moz-radial-gradient(center, ellipse cover, #dddddd 0%, rgba(255, 255, 255, 0) 70%);
-	background: -webkit-radial-gradient(center, ellipse cover, #dddddd 0%, rgba(255, 255, 255, 0) 70%);
-	background: radial-gradient(ellipse at center, #dddddd 0%, rgba(255, 255, 255, 0) 70%);
+	display: none;
 }
 
 /*
@@ -664,21 +662,16 @@ input[type="file"] {
 		-webkit-box-shadow: 0 5px 10px rgba(0,0,0,0.05);
 	}
 	.header .top-menu:before {
-		content: '';
-		position: absolute;
-		left: 0;
-		top: 0;
-		bottom: auto;
-		width: 100%;
-		height: 1px;
-		background: -moz-radial-gradient(left, ellipse cover, #dddddd 0%, rgba(255, 255, 255, 0) 70%);
-		background: -webkit-radial-gradient(left, ellipse cover, #dddddd 0%, rgba(255, 255, 255, 0) 70%);
-		background: radial-gradient(ellipse at left, #dddddd 0%, rgba(255, 255, 255, 0) 70%);
-		z-index: 2;
+		display: none;
 	}
 	.header .top-menu ul {
 		display: flex;
 		overflow: auto;
+		-ms-overflow-style: none;  /* IE and Edge */
+		scrollbar-width: none;  /* Firefox */
+	}
+	.header .top-menu ul::-webkit-scrollbar {
+		display: none;  /* Chrome, Safari and Opera */
 	}
 	.header .top-menu ul li {
 		min-width: 20%;
@@ -703,7 +696,7 @@ input[type="file"] {
 		-khtml-border-radius: 0 0 4px 0;
 	}
 	.header .top-menu ul {
-		background: #fff;
+		background: transparent;
 	}
 }
 

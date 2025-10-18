@@ -320,3 +320,25 @@
 		background: -webkit-linear-gradient(-45deg, rgba(255, 152, 0, 0.4) 0%, rgba(255, 152, 0, 0.01) 100%);
 		background: linear-gradient(135deg, rgba(255, 152, 0, 0.4) 0%, rgba(255, 152, 0, 0.01) 100%);
 	}
+
+	/*
+		Publications - Orange Year
+	*/
+	.content.publications .resume-item .date {
+		color: #ff9800;
+	}
+
+	/*
+		Orange Section Titles
+	*/
+	.content .title {
+		color: #ff9800 !important;
+	}
+
+	.resume-title .name {
+		color: #ff9800 !important;
+	}
+
+	.skill-title .name {
+		color: #ff9800 !important;
+	}

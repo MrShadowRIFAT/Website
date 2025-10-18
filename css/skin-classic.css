@@ -48,12 +48,7 @@
 }
 
 .info-list ul li strong:after {
-	position: relative;
-	content: ' . . . .';
-	background: #fff;
-	display: inline;
-	margin-left: -3px;
-	z-index: 2;
+	display: none;
 }
 
 .blog-single .info-list ul li, .content.contacts .info-list ul li {

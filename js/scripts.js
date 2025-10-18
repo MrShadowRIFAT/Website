@@ -301,7 +301,7 @@ $(function () {
 	$('.lnks').on('click', '.lnk.discover', function(){
 		var width = $(window).width();
 		var custom_width = 1024;
-		var card_item = $('#contacts-card');
+		var card_item = $('#contacts');
 		var menu_items = $('.top-menu li');
 
 		if($('.new-skin').length) {
