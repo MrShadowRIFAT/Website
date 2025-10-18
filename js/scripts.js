@@ -6,15 +6,8 @@
 
 
 /*
-	Preloader
+	Preloader - Removed
 */
-
-$(window).on("load", function() {
-	var preload = $('.preloader');
-	preload.find('.spinner').fadeOut(function(){
-		preload.fadeOut();
-	});
-});
 
 $(function () {
 	'use strict';
