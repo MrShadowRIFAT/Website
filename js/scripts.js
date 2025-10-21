@@ -337,127 +337,43 @@ $(function () {
 
 
 	/*
-		Initialize Portfolio
+		Initialize Portfolio - REMOVED (no portfolio grid items in HTML)
 	*/
-	var $container = $('.grid-items');
-	$container.imagesLoaded(function() {
-		$container.isotope({
-			percentPosition: true,
-			itemSelector: '.grid-item'
-		});
-	});
 
 
 	/*
-		Filter items on button click
+		Filter items on button click - REMOVED (no filter buttons in HTML)
 	*/
-	$('.filter-button-group').on( 'click', '.f_btn', function() {
-		var filterValue = $(this).find('input').val();
-		$container.isotope({ filter: '.'+filterValue });
-		$('.filter-button-group .f_btn').removeClass('active');
-		$(this).addClass('active');
-	});
 
 
 	/*
-		Gallery popup
+		Gallery popup - REMOVED (no gallery items in HTML)
 	*/
-	if(/\.(?:jpg|jpeg|gif|png)$/i.test($('.gallery-item:first a').attr('href'))){
-		$('.gallery-item a').magnificPopup({
-			gallery: {
-				enabled: true
-			},
-			type: 'image',
-			closeBtnInside: false,
-			mainClass: 'mfp-fade'
-		});
-	}
 
 
 	/*
-		Media popup
+		Media popup - REMOVED (no popup media in HTML)
 	*/
-	$('.has-popup-media').magnificPopup({
-		type: 'inline',
-		overflowY: 'auto',
-		closeBtnInside: true,
-		mainClass: 'mfp-fade popup-box-inline'
-	});
 
 
 	/*
-		Image popup
+		Image popup - REMOVED (no popup images in HTML)
 	*/
-	$('.has-popup-image').magnificPopup({
-		type: 'image',
-		closeOnContentClick: true,
-		mainClass: 'mfp-fade',
-		image: {
-			verticalFit: true
-		}
-	});
 
 
 	/*
-		Video popup
+		Video popup - REMOVED (no popup videos in HTML)
 	*/
-	$('.has-popup-video').magnificPopup({
-		disableOn: 700,
-		type: 'iframe',
-		iframe: {
-			patterns: {
-				youtube_short: {
-				  index: 'youtu.be/',
-				  id: 'youtu.be/',
-				  src: 'https://www.youtube.com/embed/%id%?autoplay=1'
-				}
-			}
-		},
-		removalDelay: 160,
-		preloader: false,
-		fixedContentPos: false,
-		mainClass: 'mfp-fade',
-		callbacks: {
-			markupParse: function(template, values, item) {
-				template.find('iframe').attr('allow', 'autoplay');
-			}
-		}
-	});
 
 
 	/*
-		Music popup
+		Music popup - REMOVED (no popup music in HTML)
 	*/
-	$('.has-popup-music').magnificPopup({
-		disableOn: 700,
-		type: 'iframe',
-		removalDelay: 160,
-		preloader: false,
-		fixedContentPos: false,
-		mainClass: 'mfp-fade'
-	});
 
 
 	/*
-		Gallery popup
+		Gallery popup - REMOVED (no gallery popups in HTML)
 	*/
-	$('.has-popup-gallery').on('click', function() {
-		var gallery = $(this).attr('href');
-
-		$(gallery).magnificPopup({
-			delegate: 'a',
-			type:'image',
-			closeOnContentClick: false,
-			mainClass: 'mfp-fade',
-			removalDelay: 160,
-			fixedContentPos: false,
-			gallery: {
-				enabled: true
-			}
-		}).magnificPopup('open');
-
-		return false;
-	});
 
 
 	/*
@@ -533,112 +449,13 @@ $(function () {
 
 
 	/*
-		Validate Commect Form
+		Testimonials Carousel - REMOVED (no testimonials carousel in HTML)
 	*/
-
-	$("#comment_form").validate({
-		rules: {
-			name: {
-				required: true
-			},
-			message: {
-				required: true
-			}
-		},
-		success: "valid",
-		submitHandler: function() {
-		}
-	});
 
 
 	/*
-		Google Maps
+		Dotted/Circle Skills - REMOVED (not using dotted/circle skills visualization)
 	*/
-
-	if($('#map').length) {
-		initMap();
-	}
-
-
-	/*
-		Tesimonials Carousel
-	*/
-	var revs_slider = $(".revs-carousel.default-revs .owl-carousel");
-
-	revs_slider.owlCarousel({
-		margin: 0,
-		items: 1,
-		autoplay: false,
-		autoplayTimeout: 5000,
-		autoplayHoverPause: true,
-		loop: true,
-		rewind: false,
-		nav: false,
-		dots: true
-	});
-
-	var rtl_revs_slider = $(".revs-carousel.rtl-revs .owl-carousel");
-
-	rtl_revs_slider.owlCarousel({
-		margin: 0,
-		items: 1,
-		rtl: true,
-		autoplay: false,
-		autoplayTimeout: 5000,
-		autoplayHoverPause: true,
-		loop: true,
-		rewind: false,
-		nav: false,
-		dots: true
-	});
-
-
-	/*
-		New JS
-	*/
-
-	$(window).on('resize', function(){
-		/*
-			Dotted Skills Line On Resize Window
-		*/
-
-		var skills_dotted = $('.skills-list.dotted .progress');
-		var skills_dotted_w = skills_dotted.width();
-		if(skills_dotted.length){
-			skills_dotted.find('.percentage .da').css({'width':skills_dotted_w+1});
-		}
-
-		/*
-			Testimonials Carousel On Resize Window
-		*/
-
-		var revs_slider = $(".revs-carousel .owl-carousel");
-		revs_slider.find('.revs-item').css({'max-width':revs_slider.width()});
-	});
-
-	/*
-		Dotted Skills Line
-	*/
-
-	function skills(){
-		var skills_dotted = $('.skills-list.dotted .progress');
-		var skills_dotted_w = skills_dotted.width();
-		if(skills_dotted.length){
-			skills_dotted.append('<span class="dg"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span>');
-			skills_dotted.find('.percentage').append('<span class="da"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span>');
-			skills_dotted.find('.percentage .da').css({'width':skills_dotted_w});
-		}
-	}
-	setTimeout(skills, 1000);
-
-	/*
-		Circle Skills Line
-	*/
-
-	var skills_circles = $('.skills-list.circles .progress');
-	if(skills_circles.length){
-		skills_circles.append('<div class="slice"><div class="bar"></div><div class="fill"></div></div>');
-	}
 
 	/*
 		Wrap First Title Word
@@ -657,46 +474,4 @@ $(function () {
 	});
 
 });
-
-
-/*
-	Google Map Options
-*/
-
-function initMap() {
-	var myLatlng = new google.maps.LatLng(40.773328,-73.960088); // <- Your latitude and longitude
-	var styles = [
-	{
-		"featureType": "water",
-		"stylers": [{
-			"color": "#d8dee9"
-		},
-		{
-			"visibility": "on"
-		}]
-	},
-	{
-		"featureType": "landscape",
-		"stylers": [{
-			"color": "#eeeeee"
-		}]
-	}]
-
-	var mapOptions = {
-		zoom: 14,
-		center: myLatlng,
-		mapTypeControl: false,
-		disableDefaultUI: true,
-		zoomControl: true,
-		scrollwheel: false,
-		styles: styles
-	}
-
-	var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-	var marker = new google.maps.Marker({
-		position: myLatlng,
-		map: map,
-		title: 'We are here!'
-	});
-}
 
