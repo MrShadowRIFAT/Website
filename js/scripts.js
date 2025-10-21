@@ -472,6 +472,19 @@ $(function () {
 		var submitText = submitBtn.find('.text');
 		var originalText = submitText.text();
 		
+		// Basic validation check
+		var name = form.find('input[name="name"]').val().trim();
+		var email = form.find('input[name="email"]').val().trim();
+		var message = form.find('textarea[name="message"]').val().trim();
+		
+		if(!name || !email || !message) {
+			$('.alert-error').html('<p>❌ Please fill in all required fields.</p>').fadeIn(400);
+			setTimeout(function() {
+				$('.alert-error').fadeOut(400);
+			}, 5000);
+			return false;
+		}
+		
 		// Disable submit button and show loading
 		submitBtn.prop('disabled', true);
 		submitText.text('Sending...');
@@ -496,15 +509,16 @@ $(function () {
 					}, 8000);
 				} else {
 					// Show error message
-					$('.alert-error').fadeIn(400);
+					$('.alert-error').html('<p>❌ ' + (response.message || 'Something went wrong. Please try again.') + '</p>').fadeIn(400);
 					setTimeout(function() {
 						$('.alert-error').fadeOut(400);
 					}, 8000);
 				}
 			},
-			error: function() {
-				// Show error message
-				$('.alert-error').fadeIn(400);
+			error: function(xhr, status, error) {
+				// Show error message with details
+				console.error('Form submission error:', error);
+				$('.alert-error').html('<p>❌ Failed to send message. Please check your internet connection or try again later.</p>').fadeIn(400);
 				setTimeout(function() {
 					$('.alert-error').fadeOut(400);
 				}, 8000);
