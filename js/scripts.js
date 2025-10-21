@@ -490,10 +490,6 @@ $(function () {
 					$('.alert-success').fadeIn(400);
 					// Reset form
 					form[0].reset();
-					// Scroll to success message
-					$('html, body').animate({
-						scrollTop: $('.alert-success').offset().top - 100
-					}, 500);
 					// Keep message visible for 8 seconds
 					setTimeout(function() {
 						$('.alert-success').fadeOut(400);
