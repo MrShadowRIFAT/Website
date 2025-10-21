@@ -461,51 +461,60 @@ $(function () {
 
 
 	/*
-		Validate Contact Form
+		Web3Forms Contact Form Handler
 	*/
 
-	$("#cform").validate({
-		ignore: ".ignore",
-		rules: {
-			name: {
-				required: true
-			},
-			message: {
-				required: true
-			},
-			email: {
-				required: true,
-				email: true
-			},
-			hiddenRecaptcha: {
-				required: function () {
-					if (grecaptcha.getResponse() == '') {
-						return true;
-					} else {
-						return false;
-					}
+	$("#cform").on('submit', function(e) {
+		e.preventDefault();
+		
+		var form = $(this);
+		var submitBtn = form.find('button[type="submit"]');
+		var submitText = submitBtn.find('.text');
+		var originalText = submitText.text();
+		
+		// Disable submit button and show loading
+		submitBtn.prop('disabled', true);
+		submitText.text('Sending...');
+		
+		// Hide previous messages
+		$('.alert-success, .alert-error').fadeOut();
+		
+		$.ajax({
+			url: form.attr('action'),
+			method: 'POST',
+			data: form.serialize(),
+			dataType: 'json',
+			success: function(response) {
+				if(response.success) {
+					// Show success message
+					$('.alert-success').fadeIn();
+					// Reset form
+					form[0].reset();
+					// Hide success message after 5 seconds
+					setTimeout(function() {
+						$('.alert-success').fadeOut();
+					}, 5000);
+				} else {
+					// Show error message
+					$('.alert-error').fadeIn();
+					setTimeout(function() {
+						$('.alert-error').fadeOut();
+					}, 5000);
 				}
+			},
+			error: function() {
+				// Show error message
+				$('.alert-error').fadeIn();
+				setTimeout(function() {
+					$('.alert-error').fadeOut();
+				}, 5000);
+			},
+			complete: function() {
+				// Re-enable submit button
+				submitBtn.prop('disabled', false);
+				submitText.text(originalText);
 			}
-		},
-		success: "valid",
-		submitHandler: function() {
-			$.ajax({
-				url: 'mailer/feedback.php',
-				type: 'post',
-				dataType: 'json',
-				data: 'name='+ $("#cform").find('input[name="name"]').val() + '&email='+ $("#cform").find('input[name="email"]').val() + '&message=' + $("#cform").find('textarea[name="message"]').val(),
-				beforeSend: function() {
-
-				},
-				complete: function() {
-
-				},
-				success: function(data) {
-					$('#cform').fadeOut();
-					$('.alert-success').delay(1000).fadeIn();
-				}
-			});
-		}
+		});
 	});
 
 
