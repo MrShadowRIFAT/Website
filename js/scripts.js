@@ -486,28 +486,32 @@ $(function () {
 			dataType: 'json',
 			success: function(response) {
 				if(response.success) {
-					// Show success message
-					$('.alert-success').fadeIn();
+					// Show success message with animation
+					$('.alert-success').fadeIn(400);
 					// Reset form
 					form[0].reset();
-					// Hide success message after 5 seconds
+					// Scroll to success message
+					$('html, body').animate({
+						scrollTop: $('.alert-success').offset().top - 100
+					}, 500);
+					// Keep message visible for 8 seconds
 					setTimeout(function() {
-						$('.alert-success').fadeOut();
-					}, 5000);
+						$('.alert-success').fadeOut(400);
+					}, 8000);
 				} else {
 					// Show error message
-					$('.alert-error').fadeIn();
+					$('.alert-error').fadeIn(400);
 					setTimeout(function() {
-						$('.alert-error').fadeOut();
-					}, 5000);
+						$('.alert-error').fadeOut(400);
+					}, 8000);
 				}
 			},
 			error: function() {
 				// Show error message
-				$('.alert-error').fadeIn();
+				$('.alert-error').fadeIn(400);
 				setTimeout(function() {
-					$('.alert-error').fadeOut();
-				}, 5000);
+					$('.alert-error').fadeOut(400);
+				}, 8000);
 			},
 			complete: function() {
 				// Re-enable submit button
